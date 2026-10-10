@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12251f">
+  <meta name="description" content="Kinence-Lab: educação financeira, economia, indicadores económicos e ferramentas para compreender melhor o dinheiro.">
+  <title>Kinence-Lab — Finanças, Economia e Conhecimento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Kinence-Lab, início">
+      <span class="brand-mark">K</span><span>kinence<span class="brand-light">-lab</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav id="navMenu" aria-label="Navegação principal">
+      <a href="#artigos">Artigos</a><a href="#indicadores">Indicadores</a><a href="#ferramentas">Ferramentas</a><a href="#sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">FINANÇAS · ECONOMIA · CONHECIMENTO</span>
+        <h1>Entende o dinheiro.<br><span>Compreende o mundo.</span></h1>
+        <p>Ideias claras, dados económicos e ferramentas práticas para aprenderes a gerir o dinheiro e a interpretar a economia.</p>
+        <div class="hero-actions"><a class="button" href="#artigos">Explorar artigos <span>↗</span></a><a class="text-link" href="#indicadores">Ver indicadores ↓</a></div>
+        <div class="author-line"><span class="author-avatar">ID</span><span>Conteúdo de <strong>Ibrahim Domingos</strong></span></div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel-top"><span>IDEIA-CHAVE / 001</span><span class="live-dot"></span></div>
+        <div class="panel-symbol">↗</div>
+        <h2>Conhecimento é uma ferramenta financeira.</h2>
+        <p>Aprende os conceitos, verifica os dados e toma decisões com mais contexto.</p>
+        <div class="panel-bottom"><span>APRENDER</span><span>ANALISAR</span><span>DECIDIR</span></div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Temas do Kinence-Lab"><span>EDUCAÇÃO FINANCEIRA</span><b>✳</b><span>ECONOMIA</span><b>✳</b><span>DADOS E INDICADORES</span><b>✳</b><span>POUPANÇA</span><b>✳</b><span>MERCADOS</span></div>
+
+    <section class="section indicators-section" id="indicadores">
+      <div class="section-heading">
+        <div><span class="eyebrow">DADOS COM FONTE</span><h2>Painel económico</h2><p class="section-intro">Últimos valores disponíveis para Angola. Os indicadores macroeconómicos são atualizados pelas fontes em períodos diferentes — não são cotações segundo a segundo.</p></div>
+        <button class="button button-outline" id="refreshIndicators"><span>↻</span> Atualizar dados</button>
+      </div>
+      <div class="data-status" id="dataStatus" role="status">A preparar ligação à API do Banco Mundial…</div>
+      <div class="indicator-grid">
+        <article class="indicator-card"><div class="indicator-label"><span>Inflação anual</span><span class="indicator-icon">%</span></div><div class="indicator-value" id="inflationValue">—</div><div class="indicator-detail" id="inflationDate">A carregar dados…</div><a class="source-link" href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=AO" target="_blank" rel="noopener">Fonte: Banco Mundial ↗</a></article>
+        <article class="indicator-card"><div class="indicator-label"><span>Crescimento do PIB</span><span class="indicator-icon">↗</span></div><div class="indicator-value" id="gdpValue">—</div><div class="indicator-detail" id="gdpDate">A carregar dados…</div><a class="source-link" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=AO" target="_blank" rel="noopener">Fonte: Banco Mundial ↗</a></article>
+        <article class="indicator-card"><div class="indicator-label"><span>Desemprego</span><span class="indicator-icon">%</span></div><div class="indicator-value" id="unemploymentValue">—</div><div class="indicator-detail" id="unemploymentDate">A carregar dados…</div><a class="source-link" href="https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=AO" target="_blank" rel="noopener">Fonte: Banco Mundial ↗</a></article>
+        <article class="indicator-card"><div class="indicator-label"><span>PIB (US$ correntes)</span><span class="indicator-icon">$</span></div><div class="indicator-value compact-value" id="nominalGdpValue">—</div><div class="indicator-detail" id="nominalGdpDate">A carregar dados…</div><a class="source-link" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=AO" target="_blank" rel="noopener">Fonte: Banco Mundial ↗</a></article>
+      </div>
+      <p class="data-note">Os valores são os mais recentes que a API disponibiliza e podem ter atraso de meses ou anos. A data apresentada é o período estatístico do indicador, não a hora da consulta. Se a fonte estiver indisponível, o painel informa-te em vez de inventar números.</p>
+    </section>
+
+    <section class="section" id="artigos">
+      <div class="section-heading">
+        <div><span class="eyebrow">APRENDER COM CLAREZA</span><h2>Artigos e explicadores</h2><p class="section-intro">Guias práticos para compreender o dinheiro e a economia.</p></div>
+        <label class="search-wrap"><span class="sr-only">Pesquisar artigos</span><span>⌕</span><input id="searchInput" type="search" placeholder="Pesquisar artigos..." autocomplete="off"></label>
+      </div>
+      <div class="filters" id="filters" aria-label="Filtrar por categoria">
+        <button class="filter active" data-category="Todos">Todos</button><button class="filter" data-category="Finanças pessoais">Finanças pessoais</button><button class="filter" data-category="Poupança">Poupança</button><button class="filter" data-category="Economia">Economia</button>
+      </div>
+      <div class="article-grid" id="articleGrid">
+        <article class="article-card" data-category="Finanças pessoais" data-search="orçamento pessoal gerir dinheiro despesas receitas planeamento">
+          <div class="article-art art-blue"><span>GUIA 01</span><b>PLANEIA<br>COM CLAREZA</b><i>↗</i></div><div class="article-meta"><span>FINANÇAS PESSOAIS</span><span>5 MIN</span></div>
+          <h3>Como criar o teu primeiro orçamento pessoal</h3><p>Aprende a registar o que entra, compreender as despesas e definir prioridades realistas.</p><button class="read-link" data-article="budget">Ler artigo <span>→</span></button>
+        </article>
+        <article class="article-card" data-category="Poupança" data-search="poupança guardar dinheiro metas objetivos despesas imprevistos">
+          <div class="article-art art-green"><span>GUIA 02</span><b>PEQUENOS<br>PASSOS, FUTURO</b><i>✳</i></div><div class="article-meta"><span>POUPANÇA</span><span>4 MIN</span></div>
+          <h3>Como criar o hábito de poupar</h3><p>Estratégias realistas para definir objetivos e preparar uma reserva ao teu ritmo.</p><button class="read-link" data-article="saving">Ler artigo <span>→</span></button>
+        </article>
+        <article class="article-card" data-category="Economia" data-search="inflação preços economia poder de compra cesta produtos">
+          <div class="article-art art-orange"><span>EXPLICADOR 01</span><b>ENTENDE O<br>TEU CONTEXTO</b><i>◎</i></div><div class="article-meta"><span>ECONOMIA</span><span>6 MIN</span></div>
+          <h3>O que é a inflação e como afeta o dia a dia?</h3><p>Uma explicação simples sobre a subida dos preços e o poder de compra.</p><button class="read-link" data-article="inflation">Ler artigo <span>→</span></button>
+        </article>
+        <article class="article-card" data-category="Finanças pessoais" data-search="juros taxa juro empréstimo poupança custo crédito">
+          <div class="article-art art-lilac"><span>GUIA 03</span><b>O CUSTO<br>DO DINHEIRO</b><i>∿</i></div><div class="article-meta"><span>FINANÇAS PESSOAIS</span><span>5 MIN</span></div>
+          <h3>O que são juros?</h3><p>Percebe porque os juros podem ser o custo de um empréstimo ou o rendimento de uma poupança.</p><button class="read-link" data-article="interest">Ler artigo <span>→</span></button>
+        </article>
+        <article class="article-card" data-category="Economia" data-search="produto interno bruto PIB economia produção crescimento">
+          <div class="article-art art-sand"><span>EXPLICADOR 02</span><b>MEDIR A<br>ECONOMIA</b><i>▥</i></div><div class="article-meta"><span>ECONOMIA</span><span>5 MIN</span></div>
+          <h3>O que significa PIB?</h3><p>O que o Produto Interno Bruto mede, o que não mede e como interpretar o crescimento.</p><button class="read-link" data-article="gdp">Ler artigo <span>→</span></button>
+        </article>
+        <article class="article-card" data-category="Poupança" data-search="necessidades desejos orçamento compras prioridades">
+          <div class="article-art art-pink"><span>GUIA 04</span><b>ESCOLHAS<br>CONSCIENTES</b><i>＋</i></div><div class="article-meta"><span>POUPANÇA</span><span>4 MIN</span></div>
+          <h3>Necessidades, desejos e prioridades</h3><p>Um método simples para pensar nas compras sem culpa e sem perder de vista o essencial.</p><button class="read-link" data-article="needs">Ler artigo <span>→</span></button>
+        </article>
+      </div>
+      <p id="noResults" class="no-results" hidden>Não encontrámos artigos com essa pesquisa. Experimenta outras palavras.</p>
+    </section>
+
+    <section class="tools-section" id="ferramentas">
+      <div class="section tools-layout">
+        <div><span class="eyebrow">EXPERIMENTA</span><h2>Calculadora de orçamento</h2><p class="section-intro">Introduz valores mensais para veres a diferença entre rendimentos e despesas. Os valores são calculados no teu navegador e não são enviados para um servidor.</p></div>
+        <form id="budgetForm" class="budget-tool">
+          <label for="income">Rendimento mensal (AOA)</label><input id="income" type="number" min="0" step="any" placeholder="Ex.: 120000" required>
+          <label for="expenses">Despesas mensais (AOA)</label><input id="expenses" type="number" min="0" step="any" placeholder="Ex.: 85000" required>
+          <button class="button" type="submit">Calcular saldo ↗</button>
+          <div id="budgetResult" class="budget-result" aria-live="polite">O teu resultado aparecerá aqui.</div>
+        </form>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+      <div class="about-monogram">KL</div><div><span class="eyebrow">SOBRE O PROJETO</span><h2>Informação para pensar melhor.</h2><p>O Kinence-Lab é um projeto de educação financeira e económica criado por <strong>Ibrahim Domingos</strong>. O objetivo é explicar conceitos, contextualizar dados e ajudar os leitores a fazer perguntas melhores sobre o dinheiro e a economia.</p><a class="text-link" href="mailto:kinencelab@example.com?subject=Contacto%20Kinence-Lab">Contacto editorial ↗</a><p class="small-note">Antes de publicar, substitui o email de exemplo pelo endereço que pretendes usar.</p></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">K</span><span>kinence<span class="brand-light">-lab</span></span></a><p>Aprender hoje. Decidir melhor amanhã.</p><p class="footer-disclaimer">Conteúdo educativo e informativo; não constitui aconselhamento financeiro, fiscal ou recomendação de investimento. Verifica sempre a fonte e a data dos dados.</p><span class="copyright">© <span id="year"></span> Kinence-Lab · Autor: Ibrahim Domingos</span></footer>
+
+  <dialog id="articleDialog" class="article-dialog" aria-labelledby="dialogTitle"><button class="dialog-close" id="dialogClose" aria-label="Fechar artigo">×</button><div id="dialogContent"></div><div class="dialog-byline">Por <strong>Ibrahim Domingos</strong> · Kinence-Lab</div></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
