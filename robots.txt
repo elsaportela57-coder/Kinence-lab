@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://elsaportela57-coder.github.io/Kinence-lab/sitemap.xml
